@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:25:44 by atoof             #+#    #+#             */
-/*   Updated: 2023/03/09 18:32:55 by atoof            ###   ########.fr       */
+/*   Updated: 2023/03/10 15:44:21 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 # define FD_READ_END 0
 # define TRUE 1
 # define FALSE 0
-
 
 typedef struct s_pipex
 {
@@ -55,11 +54,10 @@ void		get_command_paths(t_pipex *pipex);
 void		get_command_arguments(t_pipex *pipex, char **argv);
 void		wait_for_child_processes(t_pipex pipex);
 char		*find_path(char **envp);
-int 		open_files(t_pipex *pipex, char *infile_path, char *outfile_path);
-void 		fork_child1(t_pipex *pipex, char **argv, char **environ);
-void 		fork_child2(t_pipex *pipex, char **argv, char **environ);
-int 		is_absolute_path(char *path);
-void 		initialize_pipe(t_pipex *pipex);
-
+int			open_files(t_pipex *pipex, char *infile_path, char *outfile_path);
+void		fork_child1(t_pipex *pipex, char **argv, char **environ);
+void		fork_child2(t_pipex *pipex, char **argv, char **environ);
+int			is_absolute_path(char *path);
+void		initialize_pipe(t_pipex *pipex);
 
 #endif

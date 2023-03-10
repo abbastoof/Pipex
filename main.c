@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:47:40 by atoof             #+#    #+#             */
-/*   Updated: 2023/03/10 11:54:38 by atoof            ###   ########.fr       */
+/*   Updated: 2023/03/10 15:50:13 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	get_command_paths(&pipex);
 	get_command_arguments(&pipex, argv);
 	if (open_files(&pipex, argv[1], argv[4]) == TRUE)
-    	fork_child1(&pipex, argv, environ);
+		fork_child1(&pipex, argv, environ);
 	get_command_arguments(&pipex, argv + 1);
 	fork_child2(&pipex, argv, environ);
 	close_pipes(&pipex);

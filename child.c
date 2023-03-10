@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 00:17:36 by atoof             #+#    #+#             */
-/*   Updated: 2023/03/10 15:08:43 by atoof            ###   ########.fr       */
+/*   Updated: 2023/03/10 15:38:32 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ void	child1(t_pipex pipex, char *argv[], char *envp[])
 		ft_putstr_fd("\n", 2);
 		exit(1);
 	}
-	execve(pipex.cmd, pipex.cmd_arguments, envp);
+	if (execve(pipex.cmd, pipex.cmd_arguments, envp) == -1)
+		error("pipex");
 }
 
 void	child2(t_pipex pipex, char **argv, char **envp)
@@ -71,5 +72,6 @@ void	child2(t_pipex pipex, char **argv, char **envp)
 		ft_putstr_fd("\n", 2);
 		exit(1);
 	}
-	execve(pipex.cmd, pipex.cmd_arguments, envp);
+	if (execve(pipex.cmd, pipex.cmd_arguments, envp) == -1)
+		error("pipex");
 }
