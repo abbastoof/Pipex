@@ -6,7 +6,7 @@
 /*   By: atoof <atoof@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:43:46 by atoof             #+#    #+#             */
-/*   Updated: 2023/03/10 12:21:37 by atoof            ###   ########.fr       */
+/*   Updated: 2023/03/10 15:16:01 by atoof            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void fork_child2(t_pipex *pipex, char **argv, char **environ)
 
 int is_absolute_path(char *path)
 {
-    if (path[0] == '/')
+    if (access(path, F_OK) == 0)
         return TRUE;
     else
         return FALSE;
